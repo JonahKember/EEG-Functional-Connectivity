@@ -9,7 +9,6 @@ function [adjacency_tensor, xs, filt_params] = across_trial_pli(data,samp_rate,f
 %   adjacency_tensor = [Channel x Channel x Sample], PLI adjacency matrices over time. 
 %   xs               = Structure with time-series used in analyses (raw, filtered, phase, hilbert-transformed).
 %   filt_params      = Structure specifying filter parameters (order, transition-width, coefficients, normalized frequencies).
-% 
 %%
 
 tic
@@ -48,11 +47,9 @@ adjacency_tensor = zeros(n_channels,n_channels,n_samples);
 channel_pairs =  nchoosek(1:n_channels,2);
 
 for ij = 1:length(channel_pairs)
-    
     pair = channel_pairs(ij,:);
     pli = pli_fx(squeeze(xs.phase(pair(1),:,:)),squeeze(xs.phase(pair(2),:,:)));
     adjacency_tensor(pair(1),pair(2),:) = pli;
-
 end
 
 % Fill in symmetric values.
