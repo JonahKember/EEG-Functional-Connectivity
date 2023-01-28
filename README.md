@@ -4,6 +4,6 @@ Estimate, pairwise for all channels, the degree to which channel time-series sho
 __Input:__ [Channel x Sample x Trial]\
 __Output:__ [Channel x Channel x Sample]
 
-Donwload the live script __across_trial_pli_tutorial.mlx__ (or view its __pdf__) for instructions.
+Run the live script __across_trial_pli_tutorial.mlx__ for detailes on implementation.
 
 Reach out with questions: jonah.kember@mail.mcgill.ca
